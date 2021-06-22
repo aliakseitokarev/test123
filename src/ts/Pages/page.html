@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="garage__menu">
+    <button class="button garage-btn">To garage</button>
+    <button class="button winners-btn">To winners</button>
+  </nav>
+  <div class="garage__main">
+    <div class="garage__data">
+      <form class="garage-create">
+        <input type="text" class="input-name" name="model">
+        <input type="color" value="ffffff" class="input-color" name="color">
+        <button class="button create-btn" type="submit">Create</button>
+      </form>
+      <form class="garage-update">
+        <input type="text" class="update-name" name="model" disabled>
+        <input type="color" value="ffffff" class="update-color" name="color" disabled>
+        <button class="button update-btn" type="submit">Update</button>
+      </form>
+    </div>
+    <div class="race-controls">
+      <button class="button start-btn">Start race</button>
+      <button class="button reset-btn">Reset</button>
+      <button class="button generate-btn">Generate cars</button>
+    </div>
+    <div class="garage__cars">
+      ${renderGarage()}
+    </div>
+    <div class="garage__winner-message">
+      <p class="message-text"></p>
+    </div>
+  </div>
+  <div class="page-controls">
+    <button class="button prev-btn" disabled>Prev</button>
+    <button class="button next-btn" disabled>Next</button>
+  </div>
+
+
+  <div class="road-controls">
+    <button class="button select-btn" id="select-car${id}">Select</button>
+    <button class="button remove-btn" id="remove-car${id}">Remove</button>
+    <span class="car-model">${model}</span>
+  </div>
+  <div class="road">
+    <div class="start-point">
+      <div class="start-navigation">
+        <button class="button start-engine-btn" id="start-car${id}">Go!</button>
+        <button class="button stop-engine-btn" id="stop-car${id}">Stop</button>
+      </div>
+      <div class="car" id="car${id}">
+        !!renderCar()
+      </div>
+    </div>
+    <div class="flag" id="flag${id}">⚑</div>
+  </div>
+
+</body>
+</html>

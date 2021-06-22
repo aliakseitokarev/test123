@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+$baseWhite: #ffffff;
+
+@mixin flex($display, $align, $justify, $direction) {
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+body {
+  background-color: #000000;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.garage__winner-message {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  visibility: hidden;
+  color: gold;
+}
+
+.start-point {
+  display: flex;
+}
+.car {
+  width: 80px;
+  height: 30px;
+}
+
+.road {
+  margin-top: 0.5rem;
+  border-bottom: $baseWhite dashed 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.flag {
+  color: red;
+  font-size: 30px;
+  text-align: end;
+  margin: 0 120px 0 0;
+}
+
+.garage__cars {
+  padding-top: 30px;
+  color: $baseWhite;
+}
+
+.cars-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#winners {
+  color: $baseWhite;
+}
+
+.start-engine-btn {
+  background-color: #76c58a;
+}
+.stop-engine-btn{
+  background-color: #d8957b;
+}
+
+.garage__menu {
+  margin-bottom: 3rem;
+}
+
+.garage__data {
+  @include flex(flex, flex-start, center, column);
+  margin-bottom: 1rem;
+}
+.table {
+  text-align: left;
+  min-width: 500px;
+  margin: 0 auto;
+
+  .car-model {
+    width: 8rem;
+  }
+
+  .asc {
+    background: url('./assets/bottom-arrow-white.png') right no-repeat;
+    background-size: contain;
+  }
+
+  .desc {
+    background: url('./assets/top-arrow-white.png') right no-repeat;
+    background-size: contain;
+  }
+
+  .table-btn {
+    color: yellow;
+    cursor: pointer;
+  }
+
+  .wins-btn {
+    width: 5rem;
+  }
+
+  .time-btn {
+    width: 8rem;
+  }
+
+  .table-btn:hover {
+    background-color: #76c58a;
+  }
+
+  .table-btn:active {
+    background-color: #ad6dd1;
+  }
+
+}
